@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="Wear’it — affordable everyday clothing essentials.">
+<title>Wear’it | Everyday Essentials</title>
+<style>
+:root{--ink:#151515;--paper:#f7f5f0;--white:#fff;--muted:#77736d;--line:#dedbd4;--accent:#c7f36b;--radius:18px;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}button,input,select,textarea{font:inherit}button,a{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+header{height:76px;background:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100vw - var(--max))/2));border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+.logo{display:flex;align-items:center;min-width:0}.logo img{width:148px;max-height:52px;object-fit:contain;object-position:left center}.wordmark{font-size:27px;font-weight:900;letter-spacing:-1.8px}.wordmark span{font-weight:400}.header-actions{display:flex;gap:10px;align-items:center}.button{border:1px solid var(--ink);border-radius:999px;background:var(--ink);color:white;padding:11px 17px;font-weight:700;display:inline-flex;justify-content:center;align-items:center;gap:8px}.button.light{background:transparent;color:var(--ink)}.button.lime{background:var(--accent);color:var(--ink);border-color:var(--accent)}.button.small{padding:7px 12px;font-size:13px}.button:disabled{opacity:.45;cursor:not-allowed}
+.hero{background:var(--ink);color:white;padding:clamp(55px,10vw,120px) 0 74px;overflow:hidden;position:relative}.hero:after{content:"W";position:absolute;font-size:clamp(300px,48vw,660px);font-weight:950;line-height:.8;right:-.02em;bottom:-.14em;color:#ffffff0a;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:2.4px;font-weight:800;text-transform:uppercase}.hero .eyebrow{color:var(--accent)}h1{font-size:clamp(52px,9vw,108px);line-height:.91;letter-spacing:-.075em;margin:22px 0;max-width:850px;position:relative;z-index:1}h1 em{font-family:Georgia,serif;font-weight:400;color:var(--accent);letter-spacing:-.065em}.hero-copy{max-width:430px;color:#d0d0cb;font-size:16px}.hero .button{margin-top:24px;position:relative;z-index:1}.hero-bottom{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-top:70px;color:#b6b6b0;font-size:12px;letter-spacing:1.2px;text-transform:uppercase;position:relative;z-index:1}
+section.section{padding:76px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:26px}.section-head h2,.manager-title{font-size:clamp(30px,5vw,48px);letter-spacing:-.055em;line-height:1.02;margin:8px 0 0}.section-head p{margin:0}.eyebrow.dark{color:#66645d}.sort{border:1px solid var(--line);border-radius:999px;padding:11px 14px;background:transparent;max-width:175px}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.product-card{min-width:0}.product-art{aspect-ratio:4/4.7;border-radius:var(--radius);background:#e9e6df;position:relative;display:grid;place-items:center;overflow:hidden}.product-art:before{content:"";position:absolute;width:76%;height:76%;border-radius:50%;background:#ffffff50;filter:blur(1px)}.shirt{width:53%;height:58%;position:relative;z-index:1;filter:drop-shadow(0 14px 10px #00000014);clip-path:polygon(24% 0,39% 0,50% 8%,61% 0,76% 0,100% 22%,83% 39%,73% 30%,73% 100%,27% 100%,27% 30%,17% 39%,0 22%);background:#202020}.product-art[data-color="white"] .shirt{background:#fafafa}.product-art[data-color="sage"] .shirt{background:#9eac9b}.product-art[data-color="navy"] .shirt{background:#202d47}.product-art[data-color="sand"] .shirt{background:#cbb99c}.product-art[data-color="rose"] .shirt{background:#d6a7a1}.product-art[data-color="blue"] .shirt{background:#7d9ab6}.art-label{position:absolute;left:13px;bottom:12px;font-size:10px;letter-spacing:1.6px;font-weight:900;color:#25251f;z-index:2}.product-meta{padding:13px 2px 0}.product-meta-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.product-meta h3{font-size:15px;line-height:1.25;margin:0;font-weight:750}.price{font-size:15px;font-weight:800;white-space:nowrap}.product-sub{font-size:12px;color:var(--muted);margin:5px 0 12px}.product-controls{display:flex;gap:8px}.product-controls select{min-width:0;flex:1;border:1px solid var(--line);border-radius:9px;background:transparent;padding:9px 8px;font-size:12px}.product-controls button{padding:9px 12px;border-radius:9px;border:0;background:var(--ink);color:white;font-weight:750;font-size:12px}
+.standard{background:#e8e6df}.standard-grid{display:grid;grid-template-columns:1.1fr 2fr;gap:45px}.standard h2{font-size:clamp(35px,5vw,58px);letter-spacing:-.06em;line-height:.98;margin:10px 0}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{border-top:1px solid #c7c4bb;padding-top:18px}.feature b{font-size:12px;color:#777}.feature h3{font-size:17px;margin:27px 0 8px}.feature p{font-size:13px;color:#66645d;margin:0}
+.manager{background:white;border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,34px)}.manager .section-head{margin-bottom:15px}.notice{font-size:13px;color:var(--muted);max-width:700px}.tabs{display:flex;gap:6px;overflow:auto;border-bottom:1px solid var(--line);margin:24px 0 20px;padding-bottom:10px}.tab{border:0;background:transparent;border-radius:999px;padding:10px 14px;white-space:nowrap;font-weight:750;color:#777}.tab.active{background:var(--ink);color:white}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:var(--paper);border-radius:14px;padding:18px}.stat span{display:block;color:var(--muted);font-size:12px}.stat strong{font-size:27px;letter-spacing:-1px;display:block;margin-top:6px}.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px 0 12px}.panel-heading h3{margin:0;font-size:18px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:570px;font-size:13px}th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line)}th{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);background:#faf9f6}tr:last-child td{border-bottom:0}.tag{display:inline-block;border-radius:999px;background:#e9e7e0;padding:4px 8px;font-size:11px;font-weight:750}.tag.good{background:#e7f3d7}.tag.low{background:#fae5dc}.empty{border:1px dashed var(--line);border-radius:12px;padding:24px;text-align:center;color:var(--muted);font-size:14px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:750}.field input,.field select,.field textarea,form input,form textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:white;color:var(--ink);min-width:0}.field.full{grid-column:1/-1}.form-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.inline-actions{display:flex;gap:6px;flex-wrap:wrap}.muted{color:var(--muted)}.small{font-size:12px}
+footer{background:var(--ink);color:white;padding:42px 18px;text-align:center}footer .footer-logo{max-width:145px;max-height:52px;object-fit:contain;filter:brightness(0) invert(1)}footer .footer-wordmark{font-size:28px;font-weight:900;letter-spacing:-2px}footer p{color:#bbb;margin:9px 0}footer small{color:#8e8e88}
+.backdrop{position:fixed;inset:0;background:#0009;z-index:40;display:flex;justify-content:flex-end}.backdrop.hide{display:none}.drawer{background:var(--paper);width:min(480px,100%);height:100%;overflow:auto;padding:23px}.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.drawer h2{font-size:28px;letter-spacing:-1px;margin:0}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-item strong{display:block}.cart-item small{color:var(--muted)}.cart-controls{display:flex;align-items:center;gap:7px;margin-top:8px}.cart-controls button{border:1px solid var(--line);background:transparent;border-radius:8px;padding:3px 9px}.cart-total{display:flex;justify-content:space-between;font-weight:850;font-size:18px;padding:18px 0}.checkout{display:grid;gap:12px}.checkout label{font-size:12px;font-weight:750;display:grid;gap:6px}.checkout textarea{min-height:70px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:12px 18px;border-radius:999px;font-size:13px;z-index:60;box-shadow:0 8px 30px #0002;display:none;max-width:calc(100% - 30px);text-align:center}.toast.show{display:block}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 13px}.standard-grid{grid-template-columns:1fr;gap:30px}.hero-bottom{margin-top:50px}.section-head h2,.manager-title{font-size:35px}}
+@media(max-width:480px){header{height:66px;padding:0 16px}.logo img{width:118px}.wordmark{font-size:24px}.button{padding:10px 13px;font-size:13px}.hero{padding:60px 0 40px}.hero-copy{font-size:14px}.hero-bottom{font-size:9px;align-items:start;flex-direction:column;gap:8px}section.section{padding:52px 0}.section-head{align-items:start;flex-direction:column}.sort{max-width:100%;width:100%}.three{grid-template-columns:1fr;gap:22px}.feature h3{margin:10px 0 5px}.stats{grid-template-columns:1fr}.stat{padding:14px}.stat strong{font-size:23px}.manager{padding:16px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.product-meta h3{font-size:14px}.price{font-size:14px}.product-controls{gap:5px}.product-controls button{padding:9px 10px}.product-controls select{padding:9px 5px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#" aria-label="Wear’it home">
+    <img src="wearit-logo-original.png" alt="Wear’it original logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <span class="wordmark" style="display:none">wear<span>’</span>it</span>
+  </a>
+  <div class="header-actions"><a class="button light small" href="#manager">Manage</a><button class="button" id="openCart" type="button">Bag <b id="count">0</b></button></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">The everyday collection</p>
+    <h1>Good basics.<br><em>Fair prices.</em></h1>
+    <div class="hero-copy">Everyday clothing for your everyday rotation. Simple styles, easy comfort, and value you can feel good about.</div>
+    <a class="button lime" href="#shop">Explore collection <span aria-hidden="true">↗</span></a>
+    <div class="hero-bottom"><span>Wear it your way</span><span>Everyday clothing · Fair value</span></div>
+  </div>
+</section>
+
+<main>
+<section class="section wrap" id="shop">
+  <div class="section-head">
+    <div><p class="eyebrow dark">Shop Wear’it</p><h2>Everyday essentials</h2></div>
+    <select id="sort" class="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select>
+  </div>
+  <div id="products" class="products"></div>
+</section>
+
+<section class="section standard">
+  <div class="wrap standard-grid">
+    <div><p class="eyebrow dark">The Wear’it standard</p><h2>Less fuss.<br>More wear.</h2></div>
+    <div class="three">
+      <article class="feature"><b>01 / COMFORT</b><h3>Everyday comfort</h3><p>Easy pieces made to fit into your daily routine.</p></article>
+      <article class="feature"><b>02 / VALUE</b><h3>Honest value</h3><p>Thoughtful essentials at accessible prices.</p></article>
+      <article class="feature"><b>03 / STYLE</b><h3>Easy to style</h3><p>Simple pieces you can wear your way.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="manager">
+  <div class="manager">
+    <div class="section-head"><div><p class="eyebrow dark">Private workspace</p><h2 class="manager-title">Brand manager</h2></div><span class="tag">This device only</span></div>
+    <p class="notice">Manage your product list, prices, stock and order enquiries. This prototype saves data in this browser only. It does not sync to other devices or provide secure staff accounts.</p>
+    <nav class="tabs" aria-label="Manager sections"><button class="tab active" data-tab="overview">Overview</button><button class="tab" data-tab="products">Products & stock</button><button class="tab" data-tab="orders">Orders</button></nav>
+    <div id="panel"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img class="footer-logo" src="wearit-logo-original.png" alt="Wear’it original logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+  <div class="footer-wordmark" style="display:none">wear’it</div>
+  <p>Everyday clothing. Fair value.</p><small>Wear’it shopping prototype · Orders are enquiries, not confirmed purchases.</small>
+</footer>
+
+<div id="drawer" class="backdrop hide" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <div class="drawer">
+    <div class="drawer-head"><h2 id="cartTitle">Your bag</h2><button class="button light small" id="closeCart" type="button">Close ×</button></div>
+    <div id="cart"></div>
+    <div class="cart-total"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+    <form id="checkout" class="checkout">
+      <label>Your name<input name="name" required autocomplete="name" placeholder="Full name"></label>
+      <label>WhatsApp number<input name="phone" required inputmode="tel" autocomplete="tel" placeholder="Include country code if possible"></label>
+      <label>Delivery area / PIN<input name="address" required autocomplete="street-address" placeholder="Area and PIN code"></label>
+      <label>Notes (optional)<textarea name="notes" placeholder="Size, colour or delivery questions"></textarea></label>
+      <button class="button" type="submit">Send enquiry on WhatsApp ↗</button>
+    </form>
+    <p class="muted small">Shipping and payment are confirmed separately. No payment is collected by this demo.</p>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  'use strict';
+  const STORAGE = 'wearit_app_v1';
+  const WA_BUSINESS_NUMBER = ''; // Add your business WhatsApp number with country code, digits only, e.g. 919876543210.
+  const initialProducts = [
+    {id:'tee-black',name:'Everyday Tee — Black',category:'Everyday basics',price:399,stock:20,color:'black',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-white',name:'Everyday Tee — White',category:'Everyday basics',price:399,stock:20,color:'white',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-sage',name:'Everyday Tee — Sage',category:'Everyday basics',price:449,stock:12,color:'sage',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-navy',name:'Everyday Tee — Navy',category:'Everyday basics',price:449,stock:12,color:'navy',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-sand',name:'Relaxed Tee — Sand',category:'Relaxed fit',price:499,stock:10,color:'sand',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-rose',name:'Relaxed Tee — Rose',category:'Relaxed fit',price:499,stock:10,color:'rose',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-blue',name:'Everyday Tee — Blue',category:'Everyday basics',price:449,stock:10,color:'blue',sizes:['S','M','L','XL','XXL'],active:true},
+    {id:'tee-charcoal',name:'Classic Tee — Charcoal',category:'Everyday basics',price:399,stock:16,color:'black',sizes:['S','M','L','XL','XXL'],active:true}
+  ];
+  const $ = s => document.querySelector(s);
+  const money = n => '₹' + Number(n || 0).toLocaleString('en-IN',{maximumFractionDigits:2});
+  const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let state = loadState();
+  let activeTab = 'overview';
+  let editingId = null;
+  const cart = [];
+
+  function loadState(){
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE));
+      if(saved && Array.isArray(saved.products) && Array.isArray(saved.orders)) return saved;
+    } catch(e) {}
+    return {products:initialProducts.map(p=>({...p})),orders:[]};
+  }
+  function save(){try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch(e){toast('Could not save: browser storage may be disabled.');}}
+  function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2600);}
+  function productById(id){return state.products.find(p=>p.id===id);}
+  function renderProducts(){
+    const host=$('#products');
+    let items=state.products.filter(p=>p.active && p.stock>0);
+    const sort=$('#sort').value;
+    if(sort==='low')items.sort((a,b)=>a.price-b.price);
+    if(sort==='high')items.sort((a,b)=>b.price-a.price);
+    if(!items.length){host.innerHTML='<div class="empty" style="grid-column:1/-1">No products available right now. Please check back soon.</div>';return;}
+    host.innerHTML=items.map(p=>`<article class="product-card">
+      <div class="product-art" data-color="${escapeHtml(p.color)}" aria-label="${escapeHtml(p.name)} product illustration"><div class="shirt"></div><span class="art-label">WEAR’IT / EVERYDAY</span></div>
+      <div class="product-meta"><div class="product-meta-top"><h3>${escapeHtml(p.name)}</h3><span class="price">${money(p.price)}</span></div>
+      <p class="product-sub">${escapeHtml(p.category)} · ${p.stock} in stock</p>
+      <div class="product-controls"><select aria-label="Choose size for ${escapeHtml(p.name)}" id="size-${escapeHtml(p.id)}">${(p.sizes||['S','M','L','XL','XXL']).map(s=>`<option>${escapeHtml(s)}</option>`).join('')}</select><button type="button" data-add="${escapeHtml(p.id)}">Add +</button></div></div>
+    </article>`).join('');
+  }
+  function addToCart(id){
+    const p=productById(id); if(!p||p.stock<1)return toast('This item is out of stock.');
+    const size=$('#size-'+CSS.escape(id))?.value || 'M';
+    const existing=cart.find(i=>i.id===id&&i.size===size);
+    const quantity=existing?existing.qty:0;
+    if(quantity>=p.stock)return toast('You have added all available stock.');
+    if(existing)existing.qty++;else cart.push({id,size,qty:1});
+    renderCart();toast('Added to your bag.');
+  }
+  function renderCart(){
+    const qty=cart.reduce((n,i)=>n+i.qty,0);$('#count').textContent=qty;
+    const host=$('#cart');
+    if(!cart.length){host.innerHTML='<div class="empty" style="margin-top:22px">Your bag is empty.<br>Find something you’ll wear on repeat.</div>';$('#subtotal').textContent=money(0);return;}
+    host.innerHTML=cart.map((i,index)=>{const p=productById(i.id);if(!p)return '';return `<div class="cart-item"><div><strong>${escapeHtml(p.name)}</strong><small>Size ${escapeHtml(i.size)} · ${money(p.price)} each</small><div class="cart-controls"><button type="button" data-qty="${index}" data-delta="-1" aria-label="Decrease quantity">−</button><span>${i.qty}</span><button type="button" data-qty="${index}" data-delta="1" aria-label="Increase quantity" ${i.qty>=p.stock?'disabled':''}>+</button><button type="button" data-remove="${index}">Remove</button></div></div><strong>${money(p.price*i.qty)}</strong></div>`;}).join('');
+    $('#subtotal').textContent=money(cart.reduce((sum,i)=>sum+(productById(i.id)?.price||0)*i.qty,0));
+  }
+  function openCart(){$('#drawer').classList.remove('hide');document.body.style.overflow='hidden';}
+  function closeCart(){$('#drawer').classList.add('hide');document.body.style.overflow='';}
+  function renderManager(){
+    document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===activeTab));
+    const panel=$('#panel');
+    if(activeTab==='overview'){
+      const active=state.products.filter(p=>p.active).length;
+      const stock=state.products.reduce((n,p)=>n+Number(p.stock||0),0);
+      const enquiries=state.orders.length;
+      const value=state.orders.reduce((n,o)=>n+Number(o.total||0),0);
+      panel.innerHTML=`<div class="stats"><div class="stat"><span>Active products</span><strong>${active}</strong></div><div class="stat"><span>Units in stock</span><strong>${stock}</strong></div><div class="stat"><span>Order enquiries</span><strong>${enquiries}</strong></div></div>
+      <div class="panel-heading"><h3>Recent enquiries</h3><button class="button light small" data-go="orders">View orders</button></div>
+      ${state.orders.length?ordersTable(state.orders.slice().reverse().slice(0,5),false):'<div class="empty">No order enquiries yet. Customer enquiries will appear here when saved on this device.</div>'}
+      <p class="muted small">Enquiry subtotal total: ${money(value)}. This is not confirmed revenue.</p>`;
+    } else if(activeTab==='products'){
+      const p=editingId?productById(editingId):null;
+      panel.innerHTML=`<div class="panel-heading"><h3>${p?'Edit product':'Add a product'}</h3>${p?'<button class="button light small" data-cancel-edit>Cancel edit</button>':''}</div>
+      <form id="productForm"><div class="form-grid">
+        <label class="field full">Product name<input name="name" required maxlength="80" value="${escapeHtml(p?.name||'')}" placeholder="e.g. Premium Everyday Tee"></label>
+        <label class="field">Category<input name="category" maxlength="50" value="${escapeHtml(p?.category||'Everyday basics')}"></label>
+        <label class="field">Price (₹)<input name="price" type="number" min="0" step="1" required value="${p?.price??''}" placeholder="399"></label>
+        <label class="field">Stock quantity<input name="stock" type="number" min="0" step="1" required value="${p?.stock??''}" placeholder="20"></label>
+        <label class="field">Display colour<select name="color">${[['black','Black'],['white','White'],['sage','Sage'],['navy','Navy'],['sand','Sand'],['rose','Rose'],['blue','Blue']].map(([v,l])=>`<option value="${v}" ${(p?.color||'black')===v?'selected':''}>${l}</option>`).join('')}</select></label>
+        <label class="field full">Available sizes (comma-separated)<input name="sizes" value="${escapeHtml((p?.sizes||['S','M','L','XL','XXL']).join(', '))}" placeholder="S, M, L, XL, XXL"></label>
+        <label class="field"><span>Show in shop?</span><select name="active"><option value="yes" ${p?.active!==false?'selected':''}>Yes</option><option value="no" ${p?.active===false?'selected':''}>No</option></select></label>
+      </div><div class="form-actions"><button class="button" type="submit">${p?'Save changes':'Add product'}</button><button class="button light" type="reset">Reset form</button></div></form>
+      <div class="panel-heading"><h3>Product inventory</h3><span class="muted small">${state.products.length} products</span></div>
+      ${state.products.length?`<div class="table-wrap"><table><thead><tr><th>Product</th><th>Price</th><th>Stock</th><th>Status</th><th>Actions</th></tr></thead><tbody>${state.products.map(x=>`<tr><td><strong>${escapeHtml(x.name)}</strong><br><span class="muted">${escapeHtml(x.category||'')}</span></td><td>${money(x.price)}</td><td>${x.stock}</td><td><span class="tag ${x.stock<=3?'low':x.active?'good':''}">${x.stock<=3?'Low stock':x.active?'Active':'Hidden'}</span></td><td><div class="inline-actions"><button class="button light small" data-edit="${escapeHtml(x.id)}">Edit</button><button class="button light small" data-toggle="${escapeHtml(x.id)}">${x.active?'Hide':'Show'}</button><button class="button light small" data-delete="${escapeHtml(x.id)}">Delete</button></div></td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">No products yet. Add your first product above.</div>'}`;
+      $('#productForm').addEventListener('submit',saveProduct);
+    } else {
+      panel.innerHTML=`<div class="panel-heading"><h3>Customer enquiries</h3><span class="muted small">${state.orders.length} saved</span></div>
+      <p class="notice">These enquiries are stored only in this browser. Keep a separate backup before clearing browser data.</p>
+      ${state.orders.length?ordersTable(state.orders.slice().reverse(),true):'<div class="empty">No enquiries saved yet.</div>'}
+      ${state.orders.length?'<div class="form-actions"><button class="button light small" data-export>Export enquiries as CSV</button></div>':''}`;
+    }
+  }
+  function ordersTable(orders,full){
+    return `<div class="table-wrap"><table><thead><tr><th>Reference</th><th>Customer</th><th>Items</th><th>Subtotal</th>${full?'<th>Status</th><th>Action</th>':''}</tr></thead><tbody>${orders.map(o=>`<tr><td><strong>${escapeHtml(o.ref)}</strong><br><span class="muted">${escapeHtml(o.date)}</span></td><td>${escapeHtml(o.name)}<br><span class="muted">${escapeHtml(o.phone)}</span><br><span class="muted">${escapeHtml(o.address)}</span></td><td>${o.items.map(i=>`${escapeHtml(i.name)} (${escapeHtml(i.size)}) × ${i.qty}`).join('<br>')}</td><td>${money(o.total)}</td>${full?`<td><select data-status="${escapeHtml(o.ref)}"><option ${o.status==='New'?'selected':''}>New</option><option ${o.status==='Contacted'?'selected':''}>Contacted</option><option ${o.status==='Completed'?'selected':''}>Completed</option><option ${o.status==='Cancelled'?'selected':''}>Cancelled</option></select></td><td><button class="button light small" data-delete-order="${escapeHtml(o.ref)}">Delete</button></td>`:''}</tr>`).join('')}</tbody></table></div>`;
+  }
+  function saveProduct(event){
+    event.preventDefault();const f=new FormData(event.currentTarget);
+    const name=String(f.get('name')||'').trim(),price=Number(f.get('price')),stock=Number(f.get('stock'));
+    if(!name||!Number.isFinite(price)||price<0||!Number.isInteger(stock)||stock<0){toast('Please check product name, price and stock.');return;}
+    const sizes=String(f.get('sizes')||'S, M, L, XL, XXL').split(',').map(s=>s.trim()).filter(Boolean);
+    const data={name,category:String(f.get('category')||'Everyday basics').trim(),price,stock,color:String(f.get('color')||'black'),sizes:sizes.length?sizes:['M'],active:f.get('active')==='yes'};
+    if(editingId){Object.assign(productById(editingId),data);toast('Product updated.');}
+    else {data.id='product-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,6);state.products.push(data);toast('Product added.');}
+    editingId=null;save();renderProducts();renderManager();
+  }
+  function exportCSV(){
+    const rows=[['Reference','Date','Customer','Phone','Address','Items','Subtotal','Status','Notes'],...state.orders.map(o=>[o.ref,o.date,o.name,o.phone,o.address,o.items.map(i=>`${i.name} / ${i.size} x ${i.qty}`).join('; '),o.total,o.status,o.notes||''])];
+    const csv=rows.map(row=>row.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');
+    const url=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));const a=document.createElement('a');a.href=url;a.download='wearit-enquiries.csv';a.click();URL.revokeObjectURL(url);
+  }
+  $('#sort').addEventListener('change',renderProducts);
+  $('#products').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(b)addToCart(b.dataset.add);});
+  $('#openCart').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);
+  $('#drawer').addEventListener('click',e=>{if(e.target===$('#drawer'))closeCart();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart();});
+  $('#cart').addEventListener('click',e=>{
+    const remove=e.target.closest('[data-remove]');if(remove){cart.splice(Number(remove.dataset.remove),1);renderCart();return;}
+    const qty=e.target.closest('[data-qty]');if(qty){const i=cart[Number(qty.dataset.qty)],p=i&&productById(i.id);if(!i)return;const n=i.qty+Number(qty.dataset.delta);if(n<=0)cart.splice(Number(qty.dataset.qty),1);else if(p&&n<=p.stock)i.qty=n;else toast('Not enough stock available.');renderCart();}
+  });
+  $('#checkout').addEventListener('submit',e=>{
+    e.preventDefault();if(!cart.length){toast('Your bag is empty.');return;}
+    for(const i of cart){const p=productById(i.id);if(!p||i.qty>p.stock){toast('Stock changed. Please review your bag.');return;}}
+    const f=new FormData(e.currentTarget);const order={ref:'WI-'+Date.now().toString().slice(-8),date:new Date().toLocaleString('en-IN'),name:String(f.get('name')).trim(),phone:String(f.get('phone')).trim(),address:String(f.get('address')).trim(),notes:String(f.get('notes')||'').trim(),status:'New',items:cart.map(i=>({id:i.id,name:productById(i.id).name,size:i.size,qty:i.qty,price:productById(i.id).price})),total:cart.reduce((n,i)=>n+productById(i.id).price*i.qty,0)};
+    state.orders.push(order);save();
+    const message=`Wear’it order enquiry ${order.ref}%0AName: ${encodeURIComponent(order.name)}%0APhone: ${encodeURIComponent(order.phone)}%0ADelivery area/PIN: ${encodeURIComponent(order.address)}%0AItems:%0A${encodeURIComponent(order.items.map(i=>`${i.name} | Size ${i.size} | Qty ${i.qty} | ${money(i.price*i.qty)}`).join('\n'))}%0ASubtotal: ${encodeURIComponent(money(order.total))}%0ANotes: ${encodeURIComponent(order.notes||'None')}%0A%0APlease confirm availability, shipping and payment.`;
+    const target=WA_BUSINESS_NUMBER.replace(/\D/g,'');
+    const url=target?`https://wa.me/${target}?text=${message}`:`https://wa.me/?text=${message}`;
+    window.open(url,'_blank','noopener,noreferrer');
+    cart.length=0;renderCart();renderProducts();renderManager();e.currentTarget.reset();closeCart();toast('Enquiry saved on this device. WhatsApp opened.');
+  });
+  document.querySelectorAll('.tabs').forEach(nav=>nav.addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(b){activeTab=b.dataset.tab;editingId=null;renderManager();}}));
+  $('#panel').addEventListener('click',e=>{
+    const go=e.target.closest('[data-go]');if(go){activeTab=go.dataset.go;renderManager();return;}
+    const edit=e.target.closest('[data-edit]');if(edit){editingId=edit.dataset.edit;activeTab='products';renderManager();$('#manager').scrollIntoView({behavior:'smooth',block:'start'});return;}
+    const cancel=e.target.closest('[data-cancel-edit]');if(cancel){editingId=null;renderManager();return;}
+    const toggle=e.target.closest('[data-toggle]');if(toggle){const p=productById(toggle.dataset.toggle);if(p){p.active=!p.active;save();renderProducts();renderManager();}return;}
+    const del=e.target.closest('[data-delete]');if(del){const p=productById(del.dataset.delete);if(p&&confirm(`Delete "${p.name}"? This cannot be undone.`)){state.products=state.products.filter(x=>x.id!==p.id);editingId=null;save();renderProducts();renderManager();}return;}
+    const delOrder=e.target.closest('[data-delete-order]');if(delOrder&&confirm('Delete this enquiry from this device?')){state.orders=state.orders.filter(o=>o.ref!==delOrder.dataset.deleteOrder);save();renderManager();return;}
+    if(e.target.closest('[data-export]'))exportCSV();
+  });
+  $('#panel').addEventListener('change',e=>{
+    const s=e.target.closest('[data-status]');if(s){const o=state.orders.find(o=>o.ref===s.dataset.status);if(o){o.status=s.value;save();toast('Enquiry status updated.');}}
+  });
+  renderProducts();renderCart();renderManager();
+})();
+</script>
+</body>
+</html>
